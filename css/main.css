@@ -36,6 +36,7 @@ Primary use:
 [ Form ]*/
 .contact100-form {
   max-width: 100%;
+  display: none;
 }
 /*------------------------------------------------------------------
 [ Input ]*/
@@ -312,6 +313,7 @@ Primary use:
 
 .wrappic1 img {
   max-width: 100%;
+  visibility: hidden;
 }
 
 /*---------------------------------------------*/

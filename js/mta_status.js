@@ -32,8 +32,8 @@ MtaStatus = function(train_line) {
           title = train_status.children()[0].textContent
           status_message = $.trim(generate_msg_for_element(train_status))
         }
-        status_data = {title: title, message: status_message}
-        console.log(status_data)
+        $(".wsize2 h3").text(title)
+        $(".wsize2 p").text(message)
     });
   }
 
