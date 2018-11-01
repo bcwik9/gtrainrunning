@@ -75,5 +75,7 @@
         },delay);
     });
 
+    MtaStatus("G")
+
 
 })(jQuery);
