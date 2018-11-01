@@ -33,7 +33,7 @@ MtaStatus = function(train_line) {
           status_message = $.trim(generate_msg_for_element(train_status))
         }
         $(".wsize2 h3").text(title)
-        $(".wsize2 p").text(message)
+        $(".wsize2 p").text(status_message)
     });
   }
 
