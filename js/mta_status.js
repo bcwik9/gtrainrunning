@@ -20,7 +20,7 @@ MtaStatus = function(train_line) {
   }
 
   var init = function() {
-    mta_url = 'http://alert.mta.info/status/subway/' + train_line
+    mta_url = 'http://www.mta.info/status/subway/' + train_line
     status_message = "MTA says everything is running smoothly."
     title = "Good Service"
     // need ability to request site data without being on the site
