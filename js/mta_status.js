@@ -24,8 +24,8 @@ MtaStatus = function(train_line) {
     status_message = "MTA says everything is running smoothly."
     title = "Good Service"
     // need ability to request site data without being on the site
-    //any_origin_url = 'https://allorigins.me/get?url=' + encodeURIComponent(mta_url) + '&callback=?'
-    any_origin_url = 'https://www.whateverorigin.org/get?url=' + encodeURIComponent(mta_url) + '&callback=?'
+    any_origin_sites = ['https://allow-any-origin.appspot.com/', 'https://allorigins.me/get?url=', 'https://api.allorigins.ml/get?url=']
+    any_origin_url = any_origin_sites[0] + encodeURIComponent(mta_url) + '&callback=?'
     $.getJSON(any_origin_url, function(data){
         html_data = $(data.contents)
         train_status = html_data.find("#status_display")
