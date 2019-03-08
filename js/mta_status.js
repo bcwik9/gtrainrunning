@@ -29,7 +29,7 @@ MtaStatus = function(train_line) {
     any_origin_url = any_origin_sites[0] + mta_url
     $.get(any_origin_url, function(data){
         console.log(data)
-        html_data = $(data.contents)
+        html_data = $(data)
         console.log(html_data)
         train_status = html_data.find("#status_display")
         if(train_status.children().length){
