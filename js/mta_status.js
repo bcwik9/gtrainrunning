@@ -29,6 +29,8 @@ MtaStatus = function(train_line) {
     any_origin_url = any_origin_sites[0] + mta_url
     $.getJSON(any_origin_url, function(data){
         html_data = $(data.contents)
+        console.log(data)
+        console.log(html_data)
         train_status = html_data.find("#status_display")
         if(train_status.children().length){
           title = train_status.children()[0].textContent
@@ -39,6 +41,7 @@ MtaStatus = function(train_line) {
           })
           status_message = train_status
         }
+        console.log(title)
         $(".wsize2 h3").text(title)
         $(".wsize2 p").html(status_message)
     });
