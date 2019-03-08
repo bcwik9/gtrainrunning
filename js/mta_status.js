@@ -28,8 +28,8 @@ MtaStatus = function(train_line) {
     // any_origin_url = any_origin_sites[0] + encodeURIComponent(mta_url) + '&callback=?' // use if encoding required
     any_origin_url = any_origin_sites[0] + mta_url
     $.getJSON(any_origin_url, function(data){
-        html_data = $(data.contents)
         console.log(data)
+        html_data = $(data.contents)
         console.log(html_data)
         train_status = html_data.find("#status_display")
         if(train_status.children().length){
