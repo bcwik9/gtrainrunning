@@ -24,13 +24,12 @@ MtaStatus = function(train_line) {
     status_message = "MTA says everything is running smoothly."
     title = "Good Service"
     // need ability to request site data without being on the site
-    any_origin_sites = ['https://cors.io/?', 'https://api.allorigins.ml/get?url=', 'https://allorigins.me/get?url=']
-    // any_origin_url = any_origin_sites[0] + encodeURIComponent(mta_url) + '&callback=?' // use if encoding required
-    any_origin_url = any_origin_sites[0] + mta_url
-    $.get(any_origin_url, function(data){
-        console.log(data)
+    // see https://gist.github.com/jimmywarting/ac1be6ea0297c16c477e17f8fbe51347
+    cors_proxy_sites = ['https://cors.io/?', 'https://api.allorigins.ml/get?url=', 'https://allorigins.me/get?url=']
+    // cors_proxy_url = cors_proxy_sites[0] + encodeURIComponent(mta_url) // use if encoding required
+    cors_proxy_url = cors_proxy_sites[0] + mta_url
+    $.get(cors_proxy_url, function(data){
         html_data = $(data)
-        console.log(html_data)
         train_status = html_data.find("#status_display")
         if(train_status.children().length){
           title = train_status.children()[0].textContent
@@ -41,7 +40,6 @@ MtaStatus = function(train_line) {
           })
           status_message = train_status
         }
-        console.log(title)
         $(".wsize2 h3").text(title)
         $(".wsize2 p").html(status_message)
     });
