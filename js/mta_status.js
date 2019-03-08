@@ -27,7 +27,7 @@ MtaStatus = function(train_line) {
     any_origin_sites = ['https://cors.io/?', 'https://api.allorigins.ml/get?url=', 'https://allorigins.me/get?url=']
     // any_origin_url = any_origin_sites[0] + encodeURIComponent(mta_url) + '&callback=?' // use if encoding required
     any_origin_url = any_origin_sites[0] + mta_url
-    $.getJSON(any_origin_url, function(data){
+    $.get(any_origin_url, function(data){
         console.log(data)
         html_data = $(data.contents)
         console.log(html_data)
