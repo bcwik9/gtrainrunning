@@ -25,7 +25,8 @@ MtaStatus = function(train_line) {
     title = "Good Service"
     // need ability to request site data without being on the site
     any_origin_sites = ['https://cors.io/?', 'https://api.allorigins.ml/get?url=', 'https://allorigins.me/get?url=']
-    any_origin_url = any_origin_sites[0] + encodeURIComponent(mta_url) + '&callback=?'
+    // any_origin_url = any_origin_sites[0] + encodeURIComponent(mta_url) + '&callback=?' // use if encoding required
+    any_origin_url = any_origin_sites[0] + mta_url
     $.getJSON(any_origin_url, function(data){
         html_data = $(data.contents)
         train_status = html_data.find("#status_display")
