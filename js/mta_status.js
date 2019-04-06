@@ -31,7 +31,7 @@ MtaStatus = function(train_line) {
     $.ajax({
       url: cors_proxy_url,
       type: 'GET',
-      beforeSend: function(xhr){xhr.setRequestHeader('Origin', 'Chrome');},
+      beforeSend: function(xhr){xhr.setRequestHeader('X-Requested-With', 'HttpRequest');},
       success: function(data){
         html_data = $(data)
         train_status = html_data.find("#status_display")
