@@ -25,13 +25,13 @@ MtaStatus = function(train_line) {
     title = "Good Service"
     // need ability to request site data without being on the site
     // see https://gist.github.com/jimmywarting/ac1be6ea0297c16c477e17f8fbe51347
-    cors_proxy_sites = ['https://cors-anywhere.herokuapp.com/', 'https://cors.io/?', 'https://api.allorigins.ml/get?url=', 'https://allorigins.me/get?url=']
+    cors_proxy_sites = ['https://crossorigin.me/', 'https://cors-anywhere.herokuapp.com/', 'https://cors.io/?', 'https://api.allorigins.ml/get?url=', 'https://allorigins.me/get?url=']
     // cors_proxy_url = cors_proxy_sites[0] + encodeURIComponent(mta_url) // use if encoding required
     cors_proxy_url = cors_proxy_sites[0] + mta_url
     $.ajax({
       url: cors_proxy_url,
       type: 'GET',
-      beforeSend: function(xhr){xhr.setRequestHeader('X-Requested-With', 'HttpRequest');},
+      beforeSend: function(xhr){xhr.setRequestHeader('Origin', 'isthegrunning.com');},
       success: function(data){
         html_data = $(data)
         train_status = html_data.find("#status_display")
